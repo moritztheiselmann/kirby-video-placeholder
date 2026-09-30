@@ -3,9 +3,20 @@
     "description": "Generates a BlurHash placeholder from a video's first frame on upload",
     "type": "kirby-plugin",
     "license": "MIT",
+    "homepage": "https://github.com/moritztheiselmann/kirby-video-placeholder",
+    "authors": [
+        {
+            "name": "Moritz Theiselmann"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/moritztheiselmann/kirby-video-placeholder/issues",
+        "source": "https://github.com/moritztheiselmann/kirby-video-placeholder"
+    },
     "require": {
         "php": ">=8.2",
         "ext-gd": "*",
+        "getkirby/composer-installer": "^1.2",
         "kornrunner/blurhash": "^1.2"
     },
     "require-dev": {
