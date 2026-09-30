@@ -1,0 +1,34 @@
+title: Video
+
+accept:
+  type: video
+
+fields:
+  caption:
+    label: Caption
+    type: writer
+    inline: true
+
+  # ---- placeholder ----------------------------------------------------------
+  # Written by the `file.create:after` / `file.replace:after` hooks. Shown here
+  # read-only so editors can see the pipeline worked (and so a missing ffmpeg
+  # is visible instead of silent).
+
+  placeholderinfo:
+    label: First-frame placeholder
+    type: info
+    theme: passive
+    text: |
+      {{ site.ffmpegStatus }}
+
+      **Hash:** `{{ file.blurhash }}`
+      **Source:** {{ file.videowidth }} × {{ file.videoheight }}
+
+  blurhash:
+    type: hidden
+
+  videowidth:
+    type: hidden
+
+  videoheight:
+    type: hidden
