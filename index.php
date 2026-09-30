@@ -1,6 +1,6 @@
 <?php
 
-use Cookbook\VideoPlaceholder\Placeholder;
+use MoritzTheiselmann\VideoPlaceholder\Placeholder;
 use Kirby\Cms\App;
 use Kirby\Cms\File;
 
@@ -33,7 +33,7 @@ if (class_exists(Placeholder::class) === false) {
     require_once __DIR__ . '/src/Placeholder.php';
 }
 
-App::plugin('cookbook/video-placeholder', [
+App::plugin('moritztheiselmann/video-placeholder', [
     'options' => [
         // Absolute paths if the binaries are not on PATH for the web user —
         // they usually are not under php-fpm.
@@ -50,7 +50,7 @@ App::plugin('cookbook/video-placeholder', [
         // components mean a longer string, not a meaningfully better blur.
         'components' => [4, 3],
 
-        // Decoded placeholder cache (`cookbook.video-placeholder`).
+        // Decoded placeholder cache (`moritztheiselmann.video-placeholder`).
         'cache' => true,
     ],
 
@@ -71,7 +71,7 @@ App::plugin('cookbook/video-placeholder', [
             return Placeholder::isAvailable()
                 ? 'FFmpeg found — placeholders are generated on upload.'
                 : 'FFmpeg NOT found. Install it on the server, or set '
-                  . '`cookbook.video-placeholder.ffmpeg` to its absolute path.';
+                  . '`moritztheiselmann.video-placeholder.ffmpeg` to its absolute path.';
         },
     ],
 
@@ -90,7 +90,7 @@ App::plugin('cookbook/video-placeholder', [
             $ratio  = $this->placeholderRatio();
             $height = max(1, (int)round($width / $ratio));
 
-            $cache = $this->kirby()->cache('cookbook.video-placeholder');
+            $cache = $this->kirby()->cache('moritztheiselmann.video-placeholder');
             $key   = md5($hash . '-' . $width . 'x' . $height);
 
             if (is_string($cached = $cache->get($key)) === true) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Cookbook\VideoPlaceholder\Tests;
+namespace MoritzTheiselmann\VideoPlaceholder\Tests;
 
-use Cookbook\VideoPlaceholder\Placeholder;
+use MoritzTheiselmann\VideoPlaceholder\Placeholder;
 use kornrunner\Blurhash\Blurhash;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;

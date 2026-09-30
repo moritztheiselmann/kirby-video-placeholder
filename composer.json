@@ -1,5 +1,5 @@
 {
-    "name": "cookbook/kirby-video-placeholder",
+    "name": "moritztheiselmann/kirby-video-placeholder",
     "description": "Generates a BlurHash placeholder from a video's first frame on upload",
     "type": "kirby-plugin",
     "license": "MIT",
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Cookbook\\VideoPlaceholder\\": "src/"
+            "MoritzTheiselmann\\VideoPlaceholder\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cookbook\\VideoPlaceholder\\Tests\\": "tests/"
+            "MoritzTheiselmann\\VideoPlaceholder\\Tests\\": "tests/"
         }
     },
     "scripts": {
