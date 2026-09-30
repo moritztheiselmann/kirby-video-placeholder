@@ -131,4 +131,4 @@ App::plugin('cookbook/video-placeholder', [
             Placeholder::generate($newFile, force: true);
         },
     ],
-]);
+], version: '1.0.0');
