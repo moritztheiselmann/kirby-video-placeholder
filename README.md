@@ -58,8 +58,8 @@ PATH even when it works in your shell:
 
 ```php
 // site/config/config.php
-'cookbook.video-placeholder.ffmpeg'  => '/usr/bin/ffmpeg',
-'cookbook.video-placeholder.ffprobe' => '/usr/bin/ffprobe',
+'moritztheiselmann.video-placeholder.ffmpeg'  => '/usr/bin/ffmpeg',
+'moritztheiselmann.video-placeholder.ffprobe' => '/usr/bin/ffprobe',
 ```
 
 Shared hosting without shell access cannot run this. There the answer is not a
@@ -107,7 +107,7 @@ sections:
 Load the assets once in your layout, then render:
 
 ```php
-<?php $plugin = kirby()::plugin('cookbook/video-placeholder') ?>
+<?php $plugin = kirby()::plugin('moritztheiselmann/video-placeholder') ?>
 <?= css($plugin->asset('video-placeholder.css')->url()) ?>
 <?= js($plugin->asset('video-placeholder.js')->url(), ['defer' => true]) ?>
 
@@ -116,7 +116,7 @@ Load the assets once in your layout, then render:
 <?php endforeach ?>
 ```
 
-Kirby publishes plugin assets to `/media/plugins/cookbook/video-placeholder/`
+Kirby publishes plugin assets to `/media/plugins/moritztheiselmann/video-placeholder/`
 automatically — nothing to copy.
 
 ### File methods
@@ -133,7 +133,7 @@ $video->blurhash()->value();   // the raw 29-char string
 ```php
 // site/config/config.php
 return [
-    'cookbook.video-placeholder' => [
+    'moritztheiselmann.video-placeholder' => [
         'ffmpeg'     => 'ffmpeg',
         'ffprobe'    => 'ffprobe',
         'time'       => 0,        // seek position, seconds
@@ -158,9 +158,9 @@ than any frame-picking heuristic.
 
 ```php
 // site/plugins/video-placeholder-backfill/index.php
-use Cookbook\VideoPlaceholder\Placeholder;
+use MoritzTheiselmann\VideoPlaceholder\Placeholder;
 
-Kirby\Cms\App::plugin('cookbook/video-placeholder-backfill', [
+Kirby\Cms\App::plugin('moritztheiselmann/video-placeholder-backfill', [
     'routes' => [
         [
             'pattern' => 'backfill-placeholders',

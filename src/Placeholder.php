@@ -1,6 +1,6 @@
 <?php
 
-namespace Cookbook\VideoPlaceholder;
+namespace MoritzTheiselmann\VideoPlaceholder;
 
 use Kirby\Cms\App;
 use Kirby\Cms\File;
@@ -32,7 +32,7 @@ final class Placeholder
             return null;
         }
 
-        return App::instance(null, true)?->option('cookbook.video-placeholder.' . $key);
+        return App::instance(null, true)?->option('moritztheiselmann.video-placeholder.' . $key);
     }
 
     /**
